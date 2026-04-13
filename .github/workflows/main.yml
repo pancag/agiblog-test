@@ -18,4 +18,4 @@ jobs:
         pip install selenium
     - name: Run tests
       run: |
-        python test_blog.py
+        python3 test_blog.py
