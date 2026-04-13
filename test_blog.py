@@ -7,24 +7,24 @@ def test_search_valid_keyword():
     driver = webdriver.Chrome()
     driver.get("https://blogdoagi.com.br/")
     
-    search_box = driver.find_element(By.NAME, "s")  
-    search_box.send_keys("tecnologia")  
-    search_box.send_keys(Keys.RETURN)  
+    search_box = driver.find_element(By.NAME, "s")  # Localiza a caixa de pesquisa
+    search_box.send_keys("tecnologia")  # Insira uma palavra-chave válida
+    search_box.send_keys(Keys.RETURN)  # Pressiona Enter
     
-    time.sleep(2)  
-    assert "Resultados da pesquisa" in driver.page_source  esperada
+    time.sleep(2)  # Aguarde os resultados carregarem
+    assert "Resultados da pesquisa" in driver.page_source  # Verifica se a página contém a frase esperada
     driver.quit()
 
 def test_search_invalid_keyword():
     driver = webdriver.Chrome()
     driver.get("https://blogdoagi.com.br/")
     
-    search_box = driver.find_element(By.NAME, "s")  
-    search_box.send_keys("xyz123")  
-    search_box.send_keys(Keys.RETURN)  
+    search_box = driver.find_element(By.NAME, "s")  # Localiza a caixa de pesquisa
+    search_box.send_keys("xyz123")  # Insira uma palavra-chave inválida
+    search_box.send_keys(Keys.RETURN)  # Pressiona Enter
     
-    time.sleep(2) 
-    assert "Nenhum resultado encontrado" in driver.page_source  
+    time.sleep(2)  # Aguarde os resultados carregarem
+    assert "Nenhum resultado encontrado" in driver.page_source  # Verifica se a página contém a frase esperada
     driver.quit()
 
 if __name__ == "__main__":
