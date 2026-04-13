@@ -16,6 +16,8 @@ jobs:
     - name: Install dependencies
       run: |
         pip install selenium
+        pip install selenium webdriver-manager
+
     - name: Run tests
       run: |
         python3 test_blog.py
